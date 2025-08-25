@@ -1,6 +1,11 @@
 # PortiaAgents
-
+![alt text](<static/Screenshot 2025-08-25 221930.png>)
 PortiaAgents is a purposeful collection of AI agents built with the **PortiaAI SDK** during **AgentHack 2025** organized by **WeMakeDevs**. It unifies day‑to‑day assistance, deep research, and documentation intelligence into one calm, coherent experience.
+
+Live site [here](https://portia-agents.onrender.com/).
+
+### Demo Video
+[![Watch the video](https://img.youtube.com/vi/MVx-pdW-rkI/0.jpg)](https://www.youtube.com/watch?v=MVx-pdW-rkI)
 
 ## What it is
 
@@ -30,6 +35,10 @@ Switching tabs and mental modes slows you down. PortiaAgents reduces the frictio
 * **Students & self‑learners** who want clear, source‑backed answers.
 * **Teams** standardizing how they ask questions, gather evidence, and document outcomes.
 
+## Designs
+![alt text](<static/Screenshot 2025-08-25 224644.png>)
+![alt text](static/PortiaAgents-AI-Agents-powered-by.png)
+![alt text](<static/Screenshot 2025-08-25 222413.png>)
 
 ## Acknowledgments
 
