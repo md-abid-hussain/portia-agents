@@ -5,7 +5,7 @@ PortiaAgents is a purposeful collection of AI agents built with the **PortiaAI S
 Live site [here](https://portia-agents.onrender.com/).
 
 ### Demo Video
-[![Watch the video](https://img.youtube.com/vi/MVx-pdW-rkI/0.jpg)](https://www.youtube.com/watch?v=MVx-pdW-rkI)
+[![Watch the video](https://img.freepik.com/free-vector/modern-red-video-media-player-template_1017-23409.jpg?semt=ais_hybrid&w=740&q=80)](https://www.youtube.com/watch?v=MVx-pdW-rkI)
 
 ## What it is
 
