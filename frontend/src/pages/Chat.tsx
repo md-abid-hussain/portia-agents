@@ -168,12 +168,10 @@ const Chat: React.FC = () => {
 
     try {
       if (!sessionId) {
-        console.log('Creating new session with query:', currentQuery);
         const newSession = await createSession(currentQuery, "chat");
         saveSession(newSession.session_id, query, "chat");
         navigate(`/chat/${newSession.session_id}`, { replace: true });
       } else {
-        console.log('Adding message to existing session:', currentQuery);
 
         // Add optimistic user message
         const optimisticMessage: Message = {
@@ -227,13 +225,6 @@ const Chat: React.FC = () => {
     }
   }, [isProcessing]);
 
-  // Debug logging
-  useEffect(() => {
-    console.log('Session:', session);
-    console.log('Events:', events);
-    console.log('Processing Steps:', currentProcessingSteps);
-    console.log('Derived Messages:', derivedMessages);
-  }, [session, events, currentProcessingSteps, derivedMessages]);
 
   return (
     <div className="flex h-full ghibli-theme" style={{ backgroundColor: 'var(--ghibli-cream)' }}>

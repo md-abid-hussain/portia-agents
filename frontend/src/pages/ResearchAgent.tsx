@@ -165,12 +165,10 @@ const ResearchAgent: React.FC = () => {
         setQuery('');
         try {
             if (!sessionId) {
-                console.log('Creating new session with query:', currentQuery);
                 const newSession = await createSession(currentQuery, "research");
                 saveSession(newSession.session_id, query, "research");
                 navigate(`/research/${newSession.session_id}`, { replace: true });
             } else {
-                console.log('Adding message to existing session:', currentQuery);
 
                 // Add optimistic user message
                 const optimisticMessage: Message = {

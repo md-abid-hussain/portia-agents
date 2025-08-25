@@ -7,9 +7,6 @@ export const parseResponseContent = (result: any, includeSummary:boolean = false
   }
 
   if (result && typeof result === 'object') {
-
-    console.log(result)
-
     // If result is an object, try to extract meaningful content
     if (includeSummary && 'summary' in result && result.summary) {
       let content = result.summary;

@@ -171,13 +171,9 @@ const DocsAgent: React.FC = () => {
 
         try {
             if (!currentSessionId) {
-                console.log('Creating new session with query:', currentQuery);
                 const newSession = await createSession(currentQuery, "docs", selectedRepo.fullName);
-                // Save session but don't navigate
-                console.log(newSession)
                 setCurrentSessionId(newSession.session_id);
             } else {
-                console.log('Adding message to existing session:', currentQuery);
 
                 // Add optimistic user message
                 const optimisticMessage: Message = {

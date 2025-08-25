@@ -140,7 +140,6 @@ export const connectToSessionStream = (
     const eventSource = new EventSource(`${API_BASE_URL}/sessions/${sessionId}/stream`);
 
     eventSource.onopen = () => {
-      console.log('SSE connection opened');
       onOpen();
     };
 
@@ -158,7 +157,6 @@ export const connectToSessionStream = (
 
     eventTypes.forEach((eventType) => {
       eventSource.addEventListener(eventType, (e) => {
-        console.log(`Received ${eventType} event:`, e.data);
         const data = safeParse(e as MessageEvent);
         if (data) {
           // Ensure event_type is set
@@ -173,7 +171,7 @@ export const connectToSessionStream = (
 
     // Handle heartbeat separately (don't pass to onMessage)
     eventSource.addEventListener('heartbeat', (e) => {
-      console.log('Heartbeat received');
+      console.log('Heartbeat received',e);
     });
 
     // Handle connection acknowledgment

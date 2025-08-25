@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { sessionApiService, connectToSessionStream } from "../services/sessionApi";
 import type { SessionResponse, SessionEvent, QueryType } from "../types/session";
 
-export function useSession(sessionId?: string) {
+export function useSession(sessionId?: string|null) {
     const [session, setSession] = useState<SessionResponse | null>(null);
     const [events, setEvents] = useState<SessionEvent[]>([]);
     const [isConnected, setIsConnected] = useState(false);
@@ -10,7 +10,6 @@ export function useSession(sessionId?: string) {
 
     // Function to handle incoming stream events
     const handleStreamEvent = useCallback((event: SessionEvent) => {
-        console.log('Received stream event:', event);
         
         setEvents((prev) => {
             // Check if event already exists to avoid duplicates
@@ -47,7 +46,6 @@ export function useSession(sessionId?: string) {
     const connectToStream = useCallback((sessionId: string) => {
         // Close existing connection if any
         if (eventSourceRef.current) {
-            console.log('Closing existing stream connection');
             eventSourceRef.current.close();
             eventSourceRef.current = null;
             setIsConnected(false);
