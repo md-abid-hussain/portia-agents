@@ -1,6 +1,7 @@
 """Application configuration."""
 
 import logging
+import os
 import tomllib
 from pathlib import Path
 from typing import Any
@@ -38,6 +39,12 @@ def get_doc_mcp_tool_registry() -> ToolRegistry:
     )
 
 
+chat_tool_registry = (
+    ToolRegistry([LLMTool(), SearchTool(), WeatherTool()])
+    if os.getenv("OPENWEATHERMAP_API_KEY")
+    else ToolRegistry([LLMTool(), SearchTool()])
+)
+
 RESEARCH_TOOLS = [
     tool.id
     for tool in open_source_tool_registry.filter_tools(
@@ -46,10 +53,7 @@ RESEARCH_TOOLS = [
     ).get_tools()
 ]
 
-CHAT_TOOLS = [
-    tool.id for tool in ToolRegistry([LLMTool(), SearchTool(), WeatherTool()]).get_tools()
-]
-
+CHAT_TOOLS = [tool.id for tool in chat_tool_registry.get_tools()]
 DOC_TOOLS = [
     tool.id
     for tool in (
@@ -97,7 +101,7 @@ STRUCTURE:
 User query: {query}
 """
 
-DOC_AGENT_PLAN_TEMPLATE="""
+DOC_AGENT_PLAN_TEMPLATE = """
 You are DocsAgent. Your task is to answer the user query properly for the repository '{repo}'
 
 User Query: {query}
