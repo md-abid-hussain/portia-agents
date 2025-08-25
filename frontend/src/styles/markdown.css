@@ -1,0 +1,33 @@
+/* Enhanced markdown styling for better code visibility */
+.markdown-content pre {
+  background-color: #f8f9fa !important;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.markdown-content pre code {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.markdown-content code {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875em !important;
+}
+
+/* Ensure good contrast in dark themes */
+@media (prefers-color-scheme: dark) {
+  .markdown-content pre {
+    background-color: #1f2937 !important;
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+  }
+  
+  .markdown-content code {
+    background-color: #374151 !important;
+    color: #f9fafb !important;
+  }
+}
